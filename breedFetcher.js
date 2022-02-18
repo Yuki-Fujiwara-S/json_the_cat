@@ -7,14 +7,14 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${input[0]}`, (error, resp
   if (error) {
     console.log("error:", error);
     return;
-  }  
+  }
   const data = JSON.parse(body);
   
-  if (data.length == 0) {
+  if (data.length === 0) {
     console.log("Cat breed not found");
     return;
   }
-  if (!error){
+  if (!error) {
     console.log(data[0].description);
     return;
   }
@@ -24,6 +24,6 @@ request(`https://api.thecatapi.com/v1/breeds/search?q=${input[0]}`, (error, resp
   // console.log(data);
   // console.log(typeof data);
   
-  });
+});
 
 
